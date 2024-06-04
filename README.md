@@ -9,6 +9,8 @@ The e-commerce API streamlines user interactions and management, encompassing au
 A few resources to get you started if this is your first Flutter project:
 ## Screens
 - ![splash_android+12](https://github.com/s4r4h4mdy0x01/e-commerce_app/assets/113318264/18692a2f-99b0-4daa-ba6c-aa8e34b94ce9)
+- ### Onboarding Screen
+- ![onboarding_e_commerce](https://github.com/s4r4h4mdy0x01/e-commerce_app/assets/113318264/a53cca13-38ea-4040-8316-c002679fe425)
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
