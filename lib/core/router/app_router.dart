@@ -2,6 +2,7 @@ import 'package:e_commerce_app/core/router/routes.dart';
 import 'package:e_commerce_app/features/home/ui/screens/home_screen.dart';
 import 'package:e_commerce_app/features/login/ui/screens/login_screen.dart';
 import 'package:e_commerce_app/features/onboarding/onboarding_screen.dart';
+import 'package:e_commerce_app/features/sign_up/ui/screens/sign_up.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {
@@ -15,6 +16,10 @@ class AppRouter {
       case RoutesString.homeScreen:
         return MaterialPageRoute(
           builder: (context) => const HomeScreen(),
+        );
+      case RoutesString.signUpScreen:
+        return MaterialPageRoute(
+          builder: (context) => const SignUpScreen(),
         );
       case RoutesString.loginScreen:
         return MaterialPageRoute(

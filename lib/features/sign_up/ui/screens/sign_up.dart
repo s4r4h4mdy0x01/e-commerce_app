@@ -6,18 +6,19 @@ import 'package:e_commerce_app/core/theming/styles.dart';
 import 'package:e_commerce_app/core/widgets/app_text_button.dart';
 import 'package:e_commerce_app/core/widgets/app_text_form_field.dart';
 import 'package:e_commerce_app/features/login/ui/widgets/dont_have_an_account.dart';
+import 'package:e_commerce_app/features/sign_up/ui/widgets/already_have_account.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
   bool isObscure = true;
 
   @override
@@ -32,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 verticalSpace(100),
                 Text(
-                  StringManager.login,
+                  StringManager.signUp,
                   style: TextStyles.font24BlackBold,
                 ),
                 verticalSpace(20),
@@ -40,6 +41,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     const AppTextFormField(
                       hintText: 'Email',
+                      keyboardType: TextInputType.emailAddress,
+                    ),
+                    verticalSpace(8),
+                    const AppTextFormField(
+                      hintText: 'UserName',
                       keyboardType: TextInputType.emailAddress,
                     ),
                     verticalSpace(8),
@@ -58,10 +64,25 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
-
+                    verticalSpace(8),
+                    AppTextFormField(
+                      hintText: 'Confirm Password',
+                      keyboardType: TextInputType.visiblePassword,
+                      obscureText: isObscure,
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            isObscure = !isObscure;
+                          });
+                        },
+                        icon: Icon(
+                          isObscure ? Icons.visibility_off : Icons.visibility,
+                        ),
+                      ),
+                    ),
                     verticalSpace(12),
                     AppTextButton(
-                      buttonText: 'Login',
+                      buttonText: 'Sign Up',
                       textStyle: TextStyles.font16WhiteMedium,
                       onPressed: () {},
                     ),
@@ -79,9 +100,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     verticalSpace(70),
                     GestureDetector(
                       onTap: () {
-                        context.pushNamed(RoutesString.signUpScreen);
+                        context.pushNamed(RoutesString.loginScreen);
                       },
-                      child: const DontHaveAnAccount(),
+                      child: const AlreadyHaveAccount(),
                     ),
                     verticalSpace(70),
                   ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:meals_ordering_app/core/theming/colors.dart';
+import 'package:e_commerce_app/core/theming/color.dart';
 
 class AppTextButton extends StatelessWidget {
   final double? borderRadius;
