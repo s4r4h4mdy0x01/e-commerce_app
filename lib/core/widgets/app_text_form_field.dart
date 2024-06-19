@@ -15,7 +15,8 @@ class AppTextFormField extends StatelessWidget {
       this.keyboardType,
       required this.hintText,
       this.focusedBorder,
-      this.enabledBorder});
+      this.enabledBorder,
+      required this.validator});
   final EdgeInsetsGeometry? contentPadding;
   final Color? fillColorBackground;
   final Widget? suffixIcon;
@@ -26,11 +27,14 @@ class AppTextFormField extends StatelessWidget {
   final bool? obscureText;
   final TextInputType? keyboardType;
   final TextEditingController? controller;
-//  final Function(String?) validator;
+  final Function(String?) validator;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      validator: (value) {
+        return validator(value);
+      },
       obscureText: obscureText ?? false,
       keyboardType: keyboardType ?? TextInputType.none,
       decoration: InputDecoration(
@@ -39,6 +43,13 @@ class AppTextFormField extends StatelessWidget {
             EdgeInsets.symmetric(vertical: 20.h, horizontal: 18.w),
         filled: true,
         fillColor: fillColorBackground ?? ColorManager.lightGrey,
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: ColorManager.error,
+            width: 1.3,
+          ),
+          borderRadius: BorderRadius.circular(16.0),
+        ),
         enabledBorder: enabledBorder ??
             OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16.0),
@@ -54,7 +65,7 @@ class AppTextFormField extends StatelessWidget {
         hintStyle: TextStyles.font13GrayRegular,
         suffixIcon: suffixIcon,
       ),
-      style: TextStyles.font14DarkBlueMedium,
+      style: TextStyles.font14DarkOrangeMedium,
     );
   }
 }

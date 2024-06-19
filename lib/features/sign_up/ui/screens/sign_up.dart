@@ -39,17 +39,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 verticalSpace(20),
                 Column(
                   children: [
-                    const AppTextFormField(
+                    AppTextFormField(
+                      validator: (p0) {},
                       hintText: 'Email',
                       keyboardType: TextInputType.emailAddress,
                     ),
                     verticalSpace(8),
-                    const AppTextFormField(
+                    AppTextFormField(
+                      validator: (p0) {},
                       hintText: 'UserName',
                       keyboardType: TextInputType.emailAddress,
                     ),
                     verticalSpace(8),
                     AppTextFormField(
+                      validator: (p0) {},
                       hintText: 'Password',
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: isObscure,
@@ -66,6 +69,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     verticalSpace(8),
                     AppTextFormField(
+                      validator: (p0) {},
                       hintText: 'Confirm Password',
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: isObscure,
