@@ -45,12 +45,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       keyboardType: TextInputType.emailAddress,
                     ),
                     verticalSpace(8),
-                    AppTextFormField(
-                      validator: (p0) {},
-                      hintText: 'UserName',
-                      keyboardType: TextInputType.emailAddress,
-                    ),
-                    verticalSpace(8),
+
                     AppTextFormField(
                       validator: (p0) {},
                       hintText: 'Password',
