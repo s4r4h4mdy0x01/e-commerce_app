@@ -7,18 +7,12 @@ import 'package:e_commerce_app/core/widgets/app_text_button.dart';
 import 'package:e_commerce_app/core/widgets/app_text_form_field.dart';
 import 'package:e_commerce_app/features/sign_up/ui/widgets/already_have_account.dart';
 import 'package:e_commerce_app/features/sign_up/ui/widgets/email_and_password_confirm_password.dart';
+import 'package:e_commerce_app/features/sign_up/ui/widgets/sign_up_bloc_listener.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SignUpScreen extends StatefulWidget {
+class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
-
-  @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
-}
-
-class _SignUpScreenState extends State<SignUpScreen> {
-
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +32,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 verticalSpace(20),
                 Column(
                   children: [
-         const          EmailAndPasswordAndConfirmPassword(),
+                    const EmailAndPasswordAndConfirmPassword(),
                     AppTextButton(
                       buttonText: 'Sign Up',
                       textStyle: TextStyles.font16WhiteMedium,
@@ -62,6 +56,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       },
                       child: const AlreadyHaveAccount(),
                     ),
+                    const SignupBlocListener(),
                     verticalSpace(70),
                   ],
                 ),
