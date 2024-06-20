@@ -28,6 +28,7 @@ class DioFactory {
         requestBody: true,
         requestHeader: true,
         responseHeader: true,
+        
       ),
     );
   }
