@@ -5,10 +5,9 @@ import 'package:e_commerce_app/core/string.dart';
 import 'package:e_commerce_app/core/theming/styles.dart';
 import 'package:e_commerce_app/core/widgets/app_text_button.dart';
 import 'package:e_commerce_app/core/widgets/app_text_form_field.dart';
-import 'package:e_commerce_app/features/login/ui/widgets/dont_have_an_account.dart';
 import 'package:e_commerce_app/features/sign_up/ui/widgets/already_have_account.dart';
+import 'package:e_commerce_app/features/sign_up/ui/widgets/email_and_password_confirm_password.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -19,7 +18,7 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  bool isObscure = true;
+
 
   @override
   Widget build(BuildContext context) {
@@ -39,47 +38,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 verticalSpace(20),
                 Column(
                   children: [
-                    AppTextFormField(
-                      validator: (p0) {},
-                      hintText: 'Email',
-                      keyboardType: TextInputType.emailAddress,
-                    ),
-                    verticalSpace(8),
-
-                    AppTextFormField(
-                      validator: (p0) {},
-                      hintText: 'Password',
-                      keyboardType: TextInputType.visiblePassword,
-                      obscureText: isObscure,
-                      suffixIcon: IconButton(
-                        onPressed: () {
-                          setState(() {
-                            isObscure = !isObscure;
-                          });
-                        },
-                        icon: Icon(
-                          isObscure ? Icons.visibility_off : Icons.visibility,
-                        ),
-                      ),
-                    ),
-                    verticalSpace(8),
-                    AppTextFormField(
-                      validator: (p0) {},
-                      hintText: 'Confirm Password',
-                      keyboardType: TextInputType.visiblePassword,
-                      obscureText: isObscure,
-                      suffixIcon: IconButton(
-                        onPressed: () {
-                          setState(() {
-                            isObscure = !isObscure;
-                          });
-                        },
-                        icon: Icon(
-                          isObscure ? Icons.visibility_off : Icons.visibility,
-                        ),
-                      ),
-                    ),
-                    verticalSpace(12),
+         const          EmailAndPasswordAndConfirmPassword(),
                     AppTextButton(
                       buttonText: 'Sign Up',
                       textStyle: TextStyles.font16WhiteMedium,
