@@ -13,5 +13,5 @@ Future<void> setupDependencyInjection() async {
   getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
   // in login
   getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
-    getIt.registerLazySingleton<LoginCubit>(() => LoginCubit(getIt()));
+  getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
 }

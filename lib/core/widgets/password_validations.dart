@@ -39,18 +39,20 @@ class PasswordValidations extends StatelessWidget {
   Widget buildValidationRow(String text, bool hasValidated) {
     return Row(
       children: [
-        const CircleAvatar(
-          radius: 2.5,
-          backgroundColor : Colors.grey,
-        ),
+        hasValidated
+            ? Icon(
+                Icons.check,
+                color: ColorManager.green,
+              )
+            : Icon(
+                Icons.close,
+                color: ColorManager.rad,
+              ),
         horizontalSpace(6),
         Text(
           text,
           style: TextStyles.font13DarkOrangeRegular.copyWith(
-            decoration: hasValidated ? TextDecoration.lineThrough : null,
-            decorationColor: Colors.green,
-            decorationThickness: 2,
-            color: hasValidated ? ColorManager.grey : ColorManager.darkPrimary,
+            color: hasValidated ? ColorManager.darkPrimary : ColorManager.error,
           ),
         )
       ],

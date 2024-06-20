@@ -4,21 +4,16 @@ import 'package:e_commerce_app/core/router/routes.dart';
 import 'package:e_commerce_app/core/string.dart';
 import 'package:e_commerce_app/core/theming/styles.dart';
 import 'package:e_commerce_app/core/widgets/app_text_button.dart';
-import 'package:e_commerce_app/core/widgets/app_text_form_field.dart';
+import 'package:e_commerce_app/features/login/logic/cubit/login_cubit.dart';
 import 'package:e_commerce_app/features/login/ui/widgets/dont_have_an_account.dart';
+import 'package:e_commerce_app/features/login/ui/widgets/email_and_password.dart';
+import 'package:e_commerce_app/features/login/ui/widgets/login_bloc_listener.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
-
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
-
 
   @override
   Widget build(BuildContext context) {
@@ -38,13 +33,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 verticalSpace(20),
                 Column(
                   children: [
-                   
-
+                    const EmailAndPassword(),
                     verticalSpace(12),
                     AppTextButton(
                       buttonText: 'Login',
                       textStyle: TextStyles.font16WhiteMedium,
-                      onPressed: () {},
+                      onPressed: () {
+                        validateThenDoLogin(context);
+                      },
                     ),
                     verticalSpace(10),
                     //? todo
@@ -64,6 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       },
                       child: const DontHaveAnAccount(),
                     ),
+                    const LoginBlocListener(),
                     verticalSpace(70),
                   ],
                 ),
@@ -73,5 +70,11 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+
+  void validateThenDoLogin(BuildContext context) {
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().emitLoginStates();
+    }
   }
 }
