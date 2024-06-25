@@ -1,8 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../helpers/shared_pref_helper.dart';
 
 class DioFactory {
-  
   DioFactory._();
 
   static Dio? dio;
@@ -15,11 +17,21 @@ class DioFactory {
       dio!
         ..options.connectTimeout = timeOut
         ..options.receiveTimeout = timeOut;
+      addDioHeaders();
       addDioInterceptor();
       return dio!;
     } else {
       return dio!;
     }
+  }
+
+  static void addDioHeaders() async {
+    //  final accessToken =SharedPreferences.getString('accessToken');
+    dio?.options.headers = {
+      'Content-Type': 'application/json',
+      'Authorization':
+          'Bearer ${await SharedPrefHelper.getSecuredString('accessToken')}',
+    };
   }
 
   static void addDioInterceptor() {
@@ -28,7 +40,6 @@ class DioFactory {
         requestBody: true,
         requestHeader: true,
         responseHeader: true,
-        
       ),
     );
   }

@@ -5,10 +5,12 @@ import 'package:e_commerce_app/core/string.dart';
 import 'package:e_commerce_app/core/theming/styles.dart';
 import 'package:e_commerce_app/core/widgets/app_text_button.dart';
 import 'package:e_commerce_app/core/widgets/app_text_form_field.dart';
+import 'package:e_commerce_app/features/sign_up/logic/cubit/sign_up_cubit.dart';
 import 'package:e_commerce_app/features/sign_up/ui/widgets/already_have_account.dart';
 import 'package:e_commerce_app/features/sign_up/ui/widgets/email_and_password_confirm_password.dart';
 import 'package:e_commerce_app/features/sign_up/ui/widgets/sign_up_bloc_listener.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -34,9 +36,11 @@ class SignUpScreen extends StatelessWidget {
                   children: [
                     const EmailAndPasswordAndConfirmPassword(),
                     AppTextButton(
-                      buttonText: 'Sign Up',
+                      buttonText: 'Create Account',
                       textStyle: TextStyles.font16WhiteMedium,
-                      onPressed: () {},
+                      onPressed: () {
+                        validateSignUp(context);
+                      },
                     ),
                     verticalSpace(10),
                     //? todo
@@ -57,7 +61,7 @@ class SignUpScreen extends StatelessWidget {
                       child: const AlreadyHaveAccount(),
                     ),
                     const SignupBlocListener(),
-                    verticalSpace(70),
+                  
                   ],
                 ),
               ],
@@ -66,5 +70,11 @@ class SignUpScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void validateSignUp(BuildContext context) {
+    if (context.read<SignUpCubit>().formKey.currentState!.validate()) {
+      context.read<SignUpCubit>().emitSignUpStates();
+    }
   }
 }

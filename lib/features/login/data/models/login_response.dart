@@ -24,8 +24,10 @@ class UserData {
   String? message;
   bool? isAuthenticated;
   String? accessToken;
+
   String? accessTokenExpiresAt;
   String? refreshToken;
+
   String? refreshTokenExpiresAt;
   UserData({
     this.message,
@@ -37,4 +39,6 @@ class UserData {
   });
   factory UserData.fromJson(Map<String, dynamic> json) =>
       _$UserDataFromJson(json);
+  static DateTime? _dateTimeFromJson(String? json) =>
+      json != null ? DateTime.tryParse(json) : null;
 }

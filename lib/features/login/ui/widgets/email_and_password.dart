@@ -26,6 +26,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
     super.initState();
     passwordController = context.read<LoginCubit>().passwordController;
     setupPasswordControllerListener();
+    
   }
 
   void setupPasswordControllerListener() {

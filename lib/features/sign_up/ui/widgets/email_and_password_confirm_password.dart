@@ -94,9 +94,8 @@ class _EmailAndPasswordAndConfirmPasswordState
             controller: context.read<SignUpCubit>().passwordConfirmController,
             validator: (value) {
               if (value == null ||
-                  value.isEmpty ||
-                  context.read<SignUpCubit>().passwordConfirmController !=
-                      context.read<SignUpCubit>().passwordController) {
+                  value.isEmpty 
+               ) {
                 return 'Please enter a valid password ';
               }
             },

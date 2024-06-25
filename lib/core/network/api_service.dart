@@ -1,6 +1,10 @@
 import 'package:dio/dio.dart';
+import 'package:e_commerce_app/features/access_token/access_token_requst.dart';
+import 'package:e_commerce_app/features/access_token/access_token_response.dart';
 import 'package:e_commerce_app/features/login/data/models/login_request_body.dart';
 import 'package:e_commerce_app/features/login/data/models/login_response.dart';
+import 'package:e_commerce_app/features/refresh_token/refresh_token_request.dart';
+import 'package:e_commerce_app/features/refresh_token/refresh_token_response.dart';
 import 'package:e_commerce_app/features/sign_up/data/models/sign_up_request_body.dart';
 import 'package:e_commerce_app/features/sign_up/data/models/sign_up_response.dart';
 import 'package:retrofit/http.dart';
@@ -18,5 +22,13 @@ abstract class ApiService {
   @POST(ApiContants.signUp)
   Future<SignUpResponse> signUp(
     @Body() SignUPRequestBody signUPRequestBody,
+  );
+  @POST(ApiContants.refreshToken)
+  Future<RefreshTokenResponse> refreshToken(
+    @Body() RefreshToken refreshTokenRequestBody,
+  );
+  @POST(ApiContants.accessToken)
+  Future<AccessTokenResponse> accessToken(
+    @Body() AccessTokenRequest accessTokenRequest,
   );
 }

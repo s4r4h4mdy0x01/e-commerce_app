@@ -2,6 +2,8 @@ class ApiContants {
   static const String baseUsrl = 'https://e-commerce-api.runasp.net/Api/V1';
   static const String signUp = '/User/Authentication/SignUp';
   static const String signIn = '/User/Authentication/SignIn';
+  static const String refreshToken = '/User/Authentication/RefreshToken';
+  static const String accessToken = '/User/Authentication/AccessToken';
 }
 
 class ApiErrors {
