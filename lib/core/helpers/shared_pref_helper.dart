@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/core/di/dependency_injection.dart';
+
 import 'package:e_commerce_app/features/access_token/access_token_requst.dart';
 import 'package:e_commerce_app/features/login/data/models/login_response.dart';
 import 'package:e_commerce_app/features/login/data/repo/login_repo.dart';
@@ -12,25 +12,20 @@ class SharedPrefHelper {
 
   SharedPrefHelper(this._loginRepo);
 
-  static const String accessToken = 'accessToken';
-  static const String accessTokenExpire = 'accessTokenExpiresAt';
-  static const String refreshToken = 'refreshToken';
-  static const String refreshTokenExpire =
-      'refreshTokenExpiresAt'; // Key for storing expiry time
-
+  
   Future<void> saveTokens(LoginResponse loginResponse) async {
     await setSecuredString(
-        'accessToken', loginResponse.userData!.accessToken ?? '');
-    await setSecuredString('accessTokenExpiresAt',
+       SharedPrefKeys.accessToken, loginResponse.userData!.accessToken ?? '');
+    await setSecuredString(SharedPrefKeys.accessTokenExpire,
         loginResponse.userData!.accessTokenExpiresAt ?? '');
     await setSecuredString(
-        'refreshToken', loginResponse.userData!.refreshToken ?? '');
-    await setSecuredString('refreshTokenExpiresAt',
+        SharedPrefKeys.refreshToken, loginResponse.userData!.refreshToken ?? '');
+    await setSecuredString(SharedPrefKeys.refreshTokenExpire,
         loginResponse.userData!.refreshTokenExpiresAt ?? '');
   }
 
   Future<void> refreshAccessToken() async {
-    final refreshToken = getSecuredString('refreshToken');
+    final refreshToken = getSecuredString(SharedPrefKeys.refreshToken);
     final response = await _loginRepo.accessTokenResponse(
         AccessTokenRequest(refreshToken: refreshToken ?? ''));
     response.when(success: (accessResponse) async {
@@ -46,7 +41,7 @@ class SharedPrefHelper {
   }
 
   Future<void> refreshRefreshToken() async {
-    final refreshToken = getSecuredString('refreshToken');
+    final refreshToken = getSecuredString(SharedPrefKeys.refreshToken);
     final response = await _loginRepo
         .refreshToken(RefreshToken(refreshToken: refreshToken ?? ''));
     response.when(success: (refreshResponse) async {
@@ -64,7 +59,7 @@ class SharedPrefHelper {
  
 
   Future<void> checkAndRefreshToken() async {
-    String? expiresAt = await getSecuredString('accessTokenExpiresAt');
+    String? expiresAt = await getSecuredString(SharedPrefKeys.accessTokenExpire);
     
     if (expiresAt != null) {
       var isExpired = DateTime.now().isAfter(DateTime.parse(expiresAt));
@@ -75,7 +70,7 @@ class SharedPrefHelper {
   }
 
   bool isSignedIn() {
-    final accessToken = getSecuredString('accessToken');
+    final accessToken = getSecuredString(SharedPrefKeys.accessToken);
     return accessToken != null;
   }
 
@@ -93,4 +88,13 @@ class SharedPrefHelper {
     debugPrint('FlutterSecureStorage : getSecuredString with key :');
     return await flutterSecureStorage.read(key: key) ?? '';
   }
+}
+
+class SharedPrefKeys{
+  static const String accessToken = 'accessToken';
+  static const String accessTokenExpire = 'accessTokenExpiresAt';
+  static const String refreshToken = 'refreshToken';
+  static const String refreshTokenExpire =
+      'refreshTokenExpiresAt'; // Key for storing expiry time
+
 }

@@ -1,1 +1,1 @@
-int c = 0;
+ bool isLogin = false;
