@@ -9,12 +9,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 bool isLoggedInUser = false;
-void main()async {
+void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   setupDependencyInjection();
-   await ScreenUtil.ensureScreenSize();
-    await checkIfLoggedInUser();
+  await ScreenUtil.ensureScreenSize();
+  await checkIfLoggedInUser();
   runApp(EcommerceApp(
     appRouter: AppRouter(),
   ));

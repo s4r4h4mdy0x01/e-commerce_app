@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/core/helpers/shared_pref_helper.dart';
+import 'package:e_commerce_app/features/home/ui/widgets/home_top_bar.dart';
 import 'package:e_commerce_app/main.dart';
 import 'package:flutter/material.dart';
 
@@ -8,16 +9,17 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: GestureDetector(
-            onTap: () async {
-              print(
-                  "isLoggedInUserisLoggedInUserisLoggedInUserisLoggedInUser$isLoggedInUser");
-              String? accessToken = await SharedPrefHelper.getSecuredString(
-                  SharedPrefKeys.accessToken);
-              print(accessToken);
-            },
-            child: Text('HOME ScRRRRRRRRR')),
+      body: SafeArea(
+        child: Container(
+          margin: const  EdgeInsets.fromLTRB(20, 16, 20, 28),
+          
+          child:  Column(
+            children: [
+           const    HomeTopBar(),
+           
+            ],
+          ),
+        ),
       ),
     );
   }
