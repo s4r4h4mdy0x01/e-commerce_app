@@ -36,7 +36,31 @@ class ProfileScreen extends StatelessWidget {
                   children: [
                     InfoUser(),
                     verticalSpace(30),
-                    ContainerIconText(),
+                    Expanded(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            ContainerIconText(
+                              icon: EvaIcons.edit2,
+                              title: 'Edit Profile',
+                            ),
+                            ContainerIconText(
+                              icon: EvaIcons.heart,
+                              color: ColorManager.rad,
+                              title: 'Favorite',
+                            ),
+                            ContainerIconText(
+                              icon: Icons.lock,
+                              title: 'Change Password',
+                            ),
+                            ContainerIconText(
+                              icon: Icons.logout,
+                              title: 'Log Out ',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ],
