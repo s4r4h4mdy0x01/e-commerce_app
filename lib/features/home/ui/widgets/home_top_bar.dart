@@ -1,4 +1,6 @@
-import 'package:e_commerce_app/core/helpers/spacing.dart';
+import 'package:e_commerce_app/core/helpers/extensions.dart';
+
+import 'package:e_commerce_app/core/router/routes.dart';
 import 'package:e_commerce_app/core/theming/color.dart';
 import 'package:e_commerce_app/core/theming/styles.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +29,7 @@ class HomeTopBar extends StatelessWidget {
         const Spacer(),
         GestureDetector(
           onTap: () {
-            
+            context.pushNamed(RoutesString.profileScreen);
           },
           child: CircleAvatar(
             backgroundColor: ColorManager.lighttGrey,

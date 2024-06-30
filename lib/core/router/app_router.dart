@@ -4,6 +4,7 @@ import 'package:e_commerce_app/features/home/ui/screens/home_screen.dart';
 import 'package:e_commerce_app/features/login/logic/cubit/login_cubit.dart';
 import 'package:e_commerce_app/features/login/ui/screens/login_screen.dart';
 import 'package:e_commerce_app/features/onboarding/onboarding_screen.dart';
+import 'package:e_commerce_app/features/profile/ui/screen/profile_screen.dart';
 import 'package:e_commerce_app/features/sign_up/logic/cubit/sign_up_cubit.dart';
 import 'package:e_commerce_app/features/sign_up/ui/screens/sign_up.dart';
 import 'package:flutter/material.dart';
@@ -21,11 +22,15 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const HomeScreen(),
         );
+      case RoutesString.profileScreen:
+        return MaterialPageRoute(
+          builder: (context) => const ProfileScreen(),
+        );
       case RoutesString.signUpScreen:
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
             create: (context) => getIt<SignUpCubit>(),
-            child:  const SignUpScreen(),
+            child: const SignUpScreen(),
           ),
         );
       case RoutesString.loginScreen:

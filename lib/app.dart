@@ -29,7 +29,8 @@ class EcommerceApp extends StatelessWidget {
             // useMaterial3: true,
             ),
         onGenerateRoute: AppRouter.onGenerate,
-        initialRoute: isLoggedInUser
+        initialRoute: 
+        isLoggedInUser
             ? RoutesString.homeScreen
             : RoutesString.onboardingScreen,
       ),
