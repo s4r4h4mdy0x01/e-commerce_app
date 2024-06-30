@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/core/di/dependency_injection.dart';
 import 'package:e_commerce_app/core/router/routes.dart';
+import 'package:e_commerce_app/features/change_password/ui/screen/change_password_screen.dart';
 import 'package:e_commerce_app/features/home/ui/screens/home_screen.dart';
 import 'package:e_commerce_app/features/login/logic/cubit/login_cubit.dart';
 import 'package:e_commerce_app/features/login/ui/screens/login_screen.dart';
@@ -25,6 +26,10 @@ class AppRouter {
       case RoutesString.profileScreen:
         return MaterialPageRoute(
           builder: (context) => const ProfileScreen(),
+        );
+      case RoutesString.changePasswordScreen:
+        return MaterialPageRoute(
+          builder: (context) => const ChangePasswordScreen(),
         );
       case RoutesString.signUpScreen:
         return MaterialPageRoute(

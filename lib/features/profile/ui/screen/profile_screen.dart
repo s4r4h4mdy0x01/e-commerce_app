@@ -1,3 +1,5 @@
+import 'package:e_commerce_app/core/helpers/extensions.dart';
+import 'package:e_commerce_app/core/router/routes.dart';
 import 'package:e_commerce_app/core/theming/color.dart';
 import 'package:e_commerce_app/features/profile/ui/screen/widgets/container_icon_text.dart';
 import 'package:e_commerce_app/features/profile/ui/screen/widgets/info_user.dart';
@@ -40,7 +42,7 @@ class ProfileScreen extends StatelessWidget {
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
-                            ContainerIconText(
+                            const ContainerIconText(
                               icon: EvaIcons.edit2,
                               title: 'Edit Profile',
                             ),
@@ -50,6 +52,10 @@ class ProfileScreen extends StatelessWidget {
                               title: 'Favorite',
                             ),
                             ContainerIconText(
+                              onPressed: () {
+                                context.pushNamed(
+                                    RoutesString.changePasswordScreen);
+                              },
                               icon: Icons.lock,
                               title: 'Change Password',
                             ),
