@@ -2,6 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:e_commerce_app/core/helpers/shared_pref_helper.dart';
 import 'package:e_commerce_app/core/network/api_service.dart';
 import 'package:e_commerce_app/core/network/dio.dart';
+import 'package:e_commerce_app/features/change_password/data/repo/change_password_repo.dart';
+import 'package:e_commerce_app/features/change_password/logic/cubit/change_password_cubit.dart';
 import 'package:e_commerce_app/features/login/data/repo/login_repo.dart';
 import 'package:e_commerce_app/features/login/logic/cubit/login_cubit.dart';
 import 'package:e_commerce_app/features/sign_up/data/repo/sign_up_repo.dart';
@@ -28,4 +30,6 @@ Future<void> setupDependencyInjection() async {
   getIt.registerLazySingleton<SignUpRepo>(() => SignUpRepo(getIt()));
   getIt.registerFactory<SignUpCubit>(() => SignUpCubit(getIt()));
   // refreshToken
+  getIt.registerLazySingleton<ChangePasswordRepo>(() => ChangePasswordRepo(getIt()));
+  getIt.registerFactory<ChangePasswordCubit>(() => ChangePasswordCubit(getIt()));
 }

@@ -4,7 +4,11 @@ import 'package:e_commerce_app/core/string.dart';
 import 'package:e_commerce_app/core/theming/styles.dart';
 import 'package:e_commerce_app/core/widgets/app_text_button.dart';
 import 'package:e_commerce_app/core/widgets/app_text_form_field.dart';
+import 'package:e_commerce_app/features/change_password/logic/cubit/change_password_cubit.dart';
+import 'package:e_commerce_app/features/change_password/ui/widgets/change_password_bloc_istener.dart';
+import 'package:e_commerce_app/features/change_password/ui/widgets/current_and_new_password.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ChangePasswordScreen extends StatelessWidget {
@@ -26,46 +30,27 @@ class ChangePasswordScreen extends StatelessWidget {
                   style: TextStyles.font24BlackBold,
                 ),
                 verticalSpace(50),
-                AppTextFormField(
-                    hintText: 'Password',
-                    validator: (value) {
-                      if (value == null ||
-                          value.isEmpty ||
-                          !AppRegex.isPasswordValid(value)) {
-                        return 'Please enter a valid password';
-                      }
-                    }),
-                verticalSpace(30),
-                AppTextFormField(
-                    hintText: 'New Password',
-                    validator: (value) {
-                      if (value == null ||
-                          value.isEmpty ||
-                          !AppRegex.isPasswordValid(value)) {
-                        return 'Please enter a valid password';
-                      }
-                    }),
-                verticalSpace(30),
-                AppTextFormField(
-                    hintText: 'Confirm New Password',
-                    validator: (value) {
-                      if (value == null ||
-                          value.isEmpty ||
-                          !AppRegex.isPasswordValid(value)) {
-                        return 'Please enter a valid password';
-                      }
-                    }),
+                const CurrentAndNewPassword(),
                 verticalSpace(38),
                 AppTextButton(
-                  buttonText: 'change',
+                  buttonText: 'Change Password',
                   textStyle: TextStyles.font16WhiteMedium,
-                  onPressed: () {},
+                  onPressed: () {
+                    validateChangePassword(context);
+                  },
                 ),
+                const ChangePasswordBlocListener(),
               ],
             ),
           ),
         ),
       ),
     );
+  }
+
+  void validateChangePassword(BuildContext context) {
+    if (context.read<ChangePasswordCubit>().formKey.currentState!.validate()) {
+      context.read<ChangePasswordCubit>().emitChangePasswordState();
+    }
   }
 }
