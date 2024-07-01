@@ -9,7 +9,7 @@ class ChangePasswordRepo {
   final ApiService _apiService;
 
   ChangePasswordRepo(this._apiService);
-  Future<ApiResult<ChangePasswordResponse>> signUp(
+  Future<ApiResult<ChangePasswordResponse>> changePassword(
       ChangePasswordRequestBody changePasswordRequestBody) async {
     try {
       final response =

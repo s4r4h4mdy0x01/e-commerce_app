@@ -4,7 +4,6 @@ import 'package:e_commerce_app/core/router/routes.dart';
 import 'package:e_commerce_app/core/string.dart';
 import 'package:e_commerce_app/core/theming/styles.dart';
 import 'package:e_commerce_app/core/widgets/app_text_button.dart';
-import 'package:e_commerce_app/core/widgets/app_text_form_field.dart';
 import 'package:e_commerce_app/features/sign_up/logic/cubit/sign_up_cubit.dart';
 import 'package:e_commerce_app/features/sign_up/ui/widgets/already_have_account.dart';
 import 'package:e_commerce_app/features/sign_up/ui/widgets/email_and_password_confirm_password.dart';
