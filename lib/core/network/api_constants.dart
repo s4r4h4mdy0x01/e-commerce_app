@@ -4,6 +4,7 @@ class ApiContants {
   static const String signIn = '/User/Authentication/SignIn';
   static const String refreshToken = '/User/Authentication/RefreshToken';
   static const String accessToken = '/User/Authentication/AccessToken';
+  static const String changePasworrd = '/User/Authentication/ChangePassword';
 }
 
 class ApiErrors {
