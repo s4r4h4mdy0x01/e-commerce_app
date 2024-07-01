@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:e_commerce_app/features/access_token/access_token_requst.dart';
 import 'package:e_commerce_app/features/access_token/access_token_response.dart';
+import 'package:e_commerce_app/features/change_password/data/model/change_password_reqest.dart';
+import 'package:e_commerce_app/features/change_password/data/model/change_password_response.dart';
 import 'package:e_commerce_app/features/login/data/models/login_request_body.dart';
 import 'package:e_commerce_app/features/login/data/models/login_response.dart';
 import 'package:e_commerce_app/features/refresh_token/refresh_token_request.dart';
@@ -27,8 +29,13 @@ abstract class ApiService {
   Future<RefreshTokenResponse> refreshToken(
     @Body() RefreshToken refreshTokenRequestBody,
   );
+  //
   @POST(ApiContants.accessToken)
   Future<AccessTokenResponse> accessToken(
     @Body() AccessTokenRequest accessTokenRequest,
+  );
+  @POST(ApiContants.changePasworrd)
+  Future<ChangePasswordResponse> changePasworrd(
+    @Body() ChangePasswordRequestBody changePasswordRequestBody,
   );
 }
