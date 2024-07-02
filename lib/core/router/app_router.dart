@@ -7,6 +7,7 @@ import 'package:e_commerce_app/features/login/logic/cubit/login_cubit.dart';
 import 'package:e_commerce_app/features/login/ui/screens/login_screen.dart';
 import 'package:e_commerce_app/features/onboarding/onboarding_screen.dart';
 import 'package:e_commerce_app/features/profile/ui/screen/profile_screen.dart';
+import 'package:e_commerce_app/features/setting/ui/setting_screen.dart';
 import 'package:e_commerce_app/features/sign_up/logic/cubit/sign_up_cubit.dart';
 import 'package:e_commerce_app/features/sign_up/ui/screens/sign_up.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,10 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const OnboardingScreen(),
         );
+      case RoutesString.settingScreen:
+        return MaterialPageRoute(
+          builder: (context) => const SettingScreen(),
+        );
 
       case RoutesString.homeScreen:
         return MaterialPageRoute(
@@ -30,9 +35,9 @@ class AppRouter {
         );
       case RoutesString.changePasswordScreen:
         return MaterialPageRoute(
-          builder: (context) =>  BlocProvider(
+          builder: (context) => BlocProvider(
             create: (context) => getIt<ChangePasswordCubit>(),
-            child: const  ChangePasswordScreen(),
+            child: const ChangePasswordScreen(),
           ),
         );
       case RoutesString.signUpScreen:

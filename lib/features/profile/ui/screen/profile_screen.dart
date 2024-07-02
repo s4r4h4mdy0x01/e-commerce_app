@@ -3,13 +3,14 @@ import 'package:e_commerce_app/core/router/routes.dart';
 import 'package:e_commerce_app/core/theming/color.dart';
 import 'package:e_commerce_app/features/profile/ui/screen/widgets/container_icon_text.dart';
 import 'package:e_commerce_app/features/profile/ui/screen/widgets/info_user.dart';
-import 'package:e_commerce_app/features/profile/ui/screen/widgets/profile_top_bar.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:e_commerce_app/core/helpers/spacing.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import '../../../../core/theming/styles.dart';
+import '../../../../core/string.dart';
+
+import '../../../../core/widgets/app_top_bar.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -19,12 +20,14 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          const ProfileTopBar(),
+          AppTopBar(
+            text: StringManager.profile,
+          ),
           verticalSpace(60),
           Expanded(
             child: Stack(
               clipBehavior: Clip.none,
-              alignment: Alignment.center,
+              alignment: Alignment.topCenter,
               children: [
                 Container(
                   decoration: BoxDecoration(
@@ -35,51 +38,7 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Column(
-                  children: [
-                    InfoUser(),
-                    verticalSpace(30),
-                    Expanded(
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            const ContainerIconText(
-                              icon: EvaIcons.edit2,
-                              title: 'Edit Profile',
-                            ),
-                            ContainerIconText(
-                              icon: EvaIcons.heart,
-                              color: ColorManager.rad,
-                              title: 'Favorite',
-                            ),
-                            ContainerIconText(
-                              onPressed: () {
-                                context.pushNamed(
-                                    RoutesString.changePasswordScreen);
-                              },
-                              icon: Icons.lock,
-                              title: 'Change Password',
-                            ),
-                            ContainerIconText(
-                              icon: Icons.logout,
-                              title: 'Log Out ',
-                              onPressed: () async {
-                                context.pushReplacementNamed(
-                                    RoutesString.loginScreen);
-                                debugPrint(
-                                    'FlutterSecureStorage : all data has been cleared');
-                                const flutterSecureStorage =
-                                    FlutterSecureStorage();
-                                await flutterSecureStorage.deleteAll();
-                                
-                              },
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                const InfoUser(),
               ],
             ),
           ),

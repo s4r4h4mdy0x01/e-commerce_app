@@ -20,20 +20,13 @@ class InfoUser extends StatelessWidget {
             ),
           ),
           verticalSpace(10),
-          GestureDetector(
-            onTap: () async {
-              String? accessToken = await SharedPrefHelper.getSecuredString(
-                  SharedPrefKeys.accessToken);
-              print(accessToken);
-            },
-            child: Text(
-              "Sara Hamdy ",
-              style: TextStyles.font24BlackRegular,
-            ),
+          Text(
+            "Sara Hamdy ",
+            style: TextStyles.font24BlackRegular,
           ),
           verticalSpace(10),
           Text(
-            "Sara@gmail.com",
+            "Sara1@gmail.com",
             style: TextStyles.font16GrayRegular,
           ),
         ],

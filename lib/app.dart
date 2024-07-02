@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/core/const.dart';
+
 import 'package:e_commerce_app/core/di/dependency_injection.dart';
 import 'package:e_commerce_app/core/helpers/shared_pref_helper.dart';
 import 'package:e_commerce_app/core/router/app_router.dart';

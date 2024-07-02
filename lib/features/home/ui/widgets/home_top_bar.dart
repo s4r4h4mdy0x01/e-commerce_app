@@ -16,9 +16,14 @@ class HomeTopBar extends StatelessWidget {
         CircleAvatar(
           backgroundColor: ColorManager.lighttGrey,
           radius: 20,
-          child: const Icon(
-            Icons.menu,
-            color: Colors.black,
+          child: IconButton(
+            onPressed: () {
+              context.pushNamed(RoutesString.settingScreen);
+            },
+            icon: const Icon(
+              Icons.settings,
+              color: Colors.black,
+            ),
           ),
         ),
         const Spacer(),

@@ -4,6 +4,9 @@ class StringManager {
   static String titleBestApp = "Best ECommerce ";
     static String login = "Login";
   static String signUp = "Sign Up";
+    static String profile = "Profile";
+      static String setting = "Setting";
+  
    static String changePassword = "Change Password";
   static const String getStartedOnboading = 'Get Started';
    static const String subTitleOnboading =
