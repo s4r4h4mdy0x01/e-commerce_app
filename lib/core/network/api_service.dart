@@ -5,6 +5,7 @@ import 'package:e_commerce_app/features/change_password/data/model/change_passwo
 import 'package:e_commerce_app/features/change_password/data/model/change_password_response.dart';
 import 'package:e_commerce_app/features/login/data/models/login_request_body.dart';
 import 'package:e_commerce_app/features/login/data/models/login_response.dart';
+import 'package:e_commerce_app/features/profile/data/models/user_model.dart';
 import 'package:e_commerce_app/features/refresh_token/refresh_token_request.dart';
 import 'package:e_commerce_app/features/refresh_token/refresh_token_response.dart';
 import 'package:e_commerce_app/features/sign_up/data/models/sign_up_request_body.dart';
@@ -37,5 +38,9 @@ abstract class ApiService {
   @POST(ApiContants.changePasworrd)
   Future<ChangePasswordResponse> changePasworrd(
     @Body() ChangePasswordRequestBody changePasswordRequestBody,
+  );
+  @GET(ApiContants.profile)
+   Future<UserRosponse> getProfileUser(
+   
   );
 }

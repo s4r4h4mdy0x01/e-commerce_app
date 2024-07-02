@@ -2,20 +2,20 @@ import 'package:json_annotation/json_annotation.dart';
 part 'user_model.g.dart';
 
 @JsonSerializable()
-class User {
+class UserRosponse {
   int? statusCode;
   String? message;
   bool? succeeded;
   @JsonKey(name: 'data')
   UserData? userData;
-  User({
+ UserRosponse({
     this.statusCode,
     this.message,
     this.succeeded,
     this.userData
   });
-  factory User.fromJson(Map<String, dynamic> json) =>
-      _$UserFromJson(json);
+  factory UserRosponse.fromJson(Map<String, dynamic> json) =>
+      _$UserRosponseFromJson(json);
 }
 
 @JsonSerializable()
