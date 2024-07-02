@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/core/helpers/extensions.dart';
+import 'package:e_commerce_app/core/helpers/shared_pref_helper.dart';
 import 'package:e_commerce_app/core/helpers/spacing.dart';
 import 'package:e_commerce_app/core/router/routes.dart';
 import 'package:e_commerce_app/core/string.dart';
@@ -46,6 +47,12 @@ class SignUpScreen extends StatelessWidget {
                     Align(
                       alignment: Alignment.topRight,
                       child: GestureDetector(
+                        onTap: () async {
+                          String? accessToken =
+                              await SharedPrefHelper.getSecuredString(
+                                  SharedPrefKeys.accessToken);
+                          print(accessToken);
+                        },
                         child: Text(
                           'Forgot Password?',
                           style: TextStyles.font116orangRegular,
@@ -60,7 +67,6 @@ class SignUpScreen extends StatelessWidget {
                       child: const AlreadyHaveAccount(),
                     ),
                     const SignupBlocListener(),
-                  
                   ],
                 ),
               ],

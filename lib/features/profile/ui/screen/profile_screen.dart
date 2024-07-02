@@ -8,6 +8,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:e_commerce_app/core/helpers/spacing.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import '../../../../core/theming/styles.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -62,6 +63,16 @@ class ProfileScreen extends StatelessWidget {
                             ContainerIconText(
                               icon: Icons.logout,
                               title: 'Log Out ',
+                              onPressed: () async {
+                                context.pushReplacementNamed(
+                                    RoutesString.loginScreen);
+                                debugPrint(
+                                    'FlutterSecureStorage : all data has been cleared');
+                                const flutterSecureStorage =
+                                    FlutterSecureStorage();
+                                await flutterSecureStorage.deleteAll();
+                                
+                              },
                             ),
                           ],
                         ),

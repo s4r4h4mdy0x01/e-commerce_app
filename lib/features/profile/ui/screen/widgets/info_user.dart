@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/core/helpers/spacing.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../core/helpers/shared_pref_helper.dart';
 import '../../../../../core/theming/styles.dart';
 
 class InfoUser extends StatelessWidget {
@@ -19,9 +20,16 @@ class InfoUser extends StatelessWidget {
             ),
           ),
           verticalSpace(10),
-          Text(
-            "Sara Hamdy ",
-            style: TextStyles.font24BlackRegular,
+          GestureDetector(
+            onTap: () async {
+              String? accessToken = await SharedPrefHelper.getSecuredString(
+                  SharedPrefKeys.accessToken);
+              print(accessToken);
+            },
+            child: Text(
+              "Sara Hamdy ",
+              style: TextStyles.font24BlackRegular,
+            ),
           ),
           verticalSpace(10),
           Text(
