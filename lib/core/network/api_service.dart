@@ -40,7 +40,7 @@ abstract class ApiService {
     @Body() ChangePasswordRequestBody changePasswordRequestBody,
   );
   @GET(ApiContants.profile)
-   Future<UserRosponse> getProfileUser(
+   Future<ProfileUserModel>  getProfileUser(
    
   );
 }

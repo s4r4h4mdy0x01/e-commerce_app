@@ -8,7 +8,7 @@ class ProfileUserRepo {
   final ApiService _apiService;
 
   ProfileUserRepo(this._apiService);
-  Future<ApiResult<UserRosponse>> getProfileUser() async {
+  Future<ApiResult<ProfileUserModel>> getProfileUser() async {
     try {
       final response = await _apiService.getProfileUser();
       return ApiResult.success(response);

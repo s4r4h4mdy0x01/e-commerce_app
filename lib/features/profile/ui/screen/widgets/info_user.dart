@@ -1,11 +1,18 @@
 import 'package:e_commerce_app/core/helpers/spacing.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/helpers/shared_pref_helper.dart';
 import '../../../../../core/theming/styles.dart';
 
+
 class InfoUser extends StatelessWidget {
-  const InfoUser({super.key});
+  final String name;
+  final String email;
+  final String imageUrl;
+  const InfoUser(
+      {super.key,
+      required this.name,
+      required this.email,
+      required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -14,19 +21,19 @@ class InfoUser extends StatelessWidget {
       child: Column(
         children: [
           Center(
-            child: const CircleAvatar(
-              backgroundImage: AssetImage('assets/images/sara.jpeg'),
+            child: CircleAvatar(
+              backgroundImage: NetworkImage(imageUrl),
               radius: 64,
             ),
           ),
           verticalSpace(10),
           Text(
-            "Sara Hamdy ",
+            name,
             style: TextStyles.font24BlackRegular,
           ),
           verticalSpace(10),
           Text(
-            "Sara1@gmail.com",
+            email,
             style: TextStyles.font16GrayRegular,
           ),
         ],

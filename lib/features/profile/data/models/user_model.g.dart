@@ -6,24 +6,8 @@ part of 'user_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-UserRosponse _$UserRosponseFromJson(Map<String, dynamic> json) => UserRosponse(
-      statusCode: (json['statusCode'] as num?)?.toInt(),
-      message: json['message'] as String?,
-      succeeded: json['succeeded'] as bool?,
-      userData: json['data'] == null
-          ? null
-          : UserData.fromJson(json['data'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$UserRosponseToJson(UserRosponse instance) =>
-    <String, dynamic>{
-      'statusCode': instance.statusCode,
-      'message': instance.message,
-      'succeeded': instance.succeeded,
-      'data': instance.userData,
-    };
-
-UserData _$UserDataFromJson(Map<String, dynamic> json) => UserData(
+ProfileUserModel _$ProfileUserModelFromJson(Map<String, dynamic> json) =>
+    ProfileUserModel(
       email: json['email'] as String?,
       userName: json['username'] as String?,
       firstName: json['firstName'] as String?,
@@ -34,7 +18,8 @@ UserData _$UserDataFromJson(Map<String, dynamic> json) => UserData(
       createdAt: json['createdAt'] as String?,
     );
 
-Map<String, dynamic> _$UserDataToJson(UserData instance) => <String, dynamic>{
+Map<String, dynamic> _$ProfileUserModelToJson(ProfileUserModel instance) =>
+    <String, dynamic>{
       'email': instance.email,
       'username': instance.userName,
       'firstName': instance.firstName,
