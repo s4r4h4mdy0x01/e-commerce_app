@@ -1,39 +1,16 @@
-import 'package:e_commerce_app/core/di/dependency_injection.dart';
-import 'package:e_commerce_app/core/helpers/extensions.dart';
-import 'package:e_commerce_app/core/router/routes.dart';
 import 'package:e_commerce_app/core/theming/color.dart';
-import 'package:e_commerce_app/features/profile/data/models/user_model.dart';
 import 'package:e_commerce_app/features/profile/logic/cubit/profile_user_state.dart';
-import 'package:e_commerce_app/features/profile/ui/screen/widgets/info_user.dart';
-
-
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:e_commerce_app/features/profile/ui/widgets/info_user.dart';
+import 'package:e_commerce_app/features/profile/ui/widgets/profile_user.dart';
 import 'package:flutter/material.dart';
 import 'package:e_commerce_app/core/helpers/spacing.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import '../../../../core/string.dart';
-
 import '../../../../core/widgets/app_top_bar.dart';
 import '../../logic/cubit/profile_user_cubit.dart';
 
-class ProfileScreen extends StatefulWidget {
+class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
-
-  @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
-}
-
-class _ProfileScreenState extends State<ProfileScreen> {
-  ProfileUserModel profileUserModel = ProfileUserModel();
-
-  @override
-  void initState() {
-    super.initState();
-    BlocProvider.of<ProfileUserCubit>(context).fetchProfile();
-    setState(() {});
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,10 +38,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     InfoUser(
-                      email: profileUserModel.email ?? 'email@',
-                      name: profileUserModel.firstName ?? 'so',
-                      imageUrl: profileUserModel.imageUrl ??
+                      email: state.profileUserMode.email ?? 'email@',
+                      name:
+                          '${state.profileUserMode.firstName ?? 'so'} ${state.profileUserMode.lastName ?? 'so'}',
+                      imageUrl: state.profileUserMode.imageUrl ??
                           'https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png',
+                    ),
+                    Expanded(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            verticalSpace(180),
+                            ProfileUser(
+                              title: 'Frist Name',
+                              text: state.profileUserMode.firstName ?? 'Name',
+                            ),
+                            ProfileUser(
+                              title: 'Last Name',
+                              text: state.profileUserMode.lastName ?? 'Name',
+                            ),
+                            ProfileUser(
+                              title: 'Bio',
+                              text: state.profileUserMode.bio ?? '',
+                            ),
+                            ProfileUser(
+                              title: 'phone Number',
+                              text: state.profileUserMode.phoneNumber ?? '',
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ],
                 ),

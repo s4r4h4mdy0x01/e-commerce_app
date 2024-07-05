@@ -1,7 +1,7 @@
 import 'package:e_commerce_app/core/helpers/extensions.dart';
 import 'package:e_commerce_app/core/string.dart';
 import 'package:e_commerce_app/core/widgets/app_top_bar.dart';
-import 'package:e_commerce_app/features/profile/ui/screen/widgets/container_icon_text.dart';
+import 'package:e_commerce_app/features/setting/ui/widgets/container_icon_text.dart';
 
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';

@@ -22,6 +22,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const OnboardingScreen(),
         );
+
       case RoutesString.settingScreen:
         return MaterialPageRoute(
           builder: (context) => const SettingScreen(),
@@ -34,8 +35,8 @@ class AppRouter {
       case RoutesString.profileScreen:
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
-            create: (context) =>getIt<ProfileUserCubit>(),
-            child:   ProfileScreen(),
+            create: (context) => getIt<ProfileUserCubit>()..fetchProfile(),
+            child: ProfileScreen(),
           ),
         );
       case RoutesString.changePasswordScreen:

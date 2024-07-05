@@ -1,8 +1,5 @@
-import 'package:e_commerce_app/core/helpers/shared_pref_helper.dart';
 import 'package:e_commerce_app/features/home/ui/widgets/home_top_bar.dart';
-import 'package:e_commerce_app/main.dart';
 import 'package:flutter/material.dart';
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -11,12 +8,11 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          margin: const  EdgeInsets.fromLTRB(20, 16, 20, 28),
-          
-          child:  Column(
+          margin: const EdgeInsets.fromLTRB(20, 16, 20, 28),
+          child: Column(
             children: [
-           const    HomeTopBar(),
-           
+              const HomeTopBar(),
+             
             ],
           ),
         ),

@@ -1,8 +1,7 @@
 import 'package:e_commerce_app/core/helpers/spacing.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/theming/styles.dart';
-
+import '../../../../core/theming/styles.dart';
 
 class InfoUser extends StatelessWidget {
   final String name;
@@ -17,7 +16,7 @@ class InfoUser extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: -46,
+      top: -60,
       child: Column(
         children: [
           Center(
@@ -26,12 +25,12 @@ class InfoUser extends StatelessWidget {
               radius: 64,
             ),
           ),
-          verticalSpace(10),
+          verticalSpace(6),
           Text(
             name,
             style: TextStyles.font24BlackRegular,
           ),
-          verticalSpace(10),
+          verticalSpace(5),
           Text(
             email,
             style: TextStyles.font16GrayRegular,

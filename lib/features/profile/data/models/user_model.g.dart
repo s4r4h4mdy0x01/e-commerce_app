@@ -8,14 +8,14 @@ part of 'user_model.dart';
 
 ProfileUserModel _$ProfileUserModelFromJson(Map<String, dynamic> json) =>
     ProfileUserModel(
-      email: json['email'] as String?,
-      userName: json['username'] as String?,
-      firstName: json['firstName'] as String?,
-      lastName: json['lastName'] as String?,
-      phoneNumber: json['phoneNumber'] as String?,
-      bio: json['bio'] as String?,
-      imageUrl: json['imageUrl'] as String?,
-      createdAt: json['createdAt'] as String?,
+      email: json['data']['email'] as String?,
+      userName: json['data']['username'] as String?,
+      firstName: json['data']['firstName'] as String?,
+      lastName: json['data']['lastName'] as String?,
+      phoneNumber: json['data']['phoneNumber'] as String?,
+      bio: json['data']['bio'] as String?,
+      imageUrl: json['data']['imageUrl'] as String?,
+      createdAt: json['data']['createdAt'] as String?,
     );
 
 Map<String, dynamic> _$ProfileUserModelToJson(ProfileUserModel instance) =>

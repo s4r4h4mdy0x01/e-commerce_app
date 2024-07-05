@@ -1,6 +1,5 @@
 import 'package:e_commerce_app/core/theming/color.dart';
 import 'package:e_commerce_app/core/theming/styles.dart';
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -24,16 +23,17 @@ class ContainerIconText extends StatelessWidget {
       ),
       margin: EdgeInsets.symmetric(horizontal: 18.w, vertical: 18.h),
       decoration: BoxDecoration(
-          border: Border.all(color: ColorManager.color3, width: 3.0),
-          borderRadius: BorderRadius.circular(5),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 5,
-              blurRadius: 7,
-              offset: Offset(0, 3), // changes position of shadow
-            ),
-          ]),
+        border: Border.all(color: ColorManager.color3, width: 3.0),
+        borderRadius: BorderRadius.circular(5),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 5,
+            blurRadius: 7,
+            offset: Offset(0, 3), // changes position of shadow
+          ),
+        ],
+      ),
       child: Row(
         children: [
           Icon(
@@ -47,7 +47,7 @@ class ContainerIconText extends StatelessWidget {
           const Spacer(),
           IconButton(
             onPressed: onPressed,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_forward_ios_outlined,
             ),
           )
