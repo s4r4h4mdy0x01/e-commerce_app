@@ -1,4 +1,3 @@
-
 import 'package:e_commerce_app/core/di/dependency_injection.dart';
 import 'package:e_commerce_app/core/helpers/shared_pref_helper.dart';
 import 'package:e_commerce_app/core/router/app_router.dart';
@@ -29,11 +28,11 @@ class EcommerceApp extends StatelessWidget {
             // useMaterial3: true,
             ),
         onGenerateRoute: AppRouter.onGenerate,
-        initialRoute: 
-        isLoggedInUser
+        initialRoute: isLoggedInUser
             ? RoutesString.homeScreen
             : RoutesString.onboardingScreen,
       ),
     );
   }
 }
+// one two three test test

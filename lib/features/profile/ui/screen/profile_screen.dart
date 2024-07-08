@@ -14,21 +14,24 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(body: BlocBuilder<ProfileUserCubit, ProfileUserState>(
       builder: (context, state) {
         if (state is Success) {
-          return Column(
-            children: [
-              AppTopBar(
-                text: StringManager.profile,
-              ),
-              verticalSpace(60),
-              Expanded(
-                child: Stack(
+          return SingleChildScrollView(
+            child: Column(
+              children: [
+                AppTopBar(
+                  text: StringManager.profile,
+                ),
+                verticalSpace(60),
+                Stack(
                   clipBehavior: Clip.none,
                   alignment: Alignment.topCenter,
                   children: [
                     Container(
+                      height: screenHeight * 0.85,
+                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: ColorManager.lighttGrey,
                         borderRadius: const BorderRadius.only(
@@ -44,35 +47,31 @@ class ProfileScreen extends StatelessWidget {
                       imageUrl: state.profileUserMode.imageUrl ??
                           'https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png',
                     ),
-                    Expanded(
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            verticalSpace(180),
-                            ProfileUser(
-                              title: 'Frist Name',
-                              text: state.profileUserMode.firstName ?? 'Name',
-                            ),
-                            ProfileUser(
-                              title: 'Last Name',
-                              text: state.profileUserMode.lastName ?? 'Name',
-                            ),
-                            ProfileUser(
-                              title: 'Bio',
-                              text: state.profileUserMode.bio ?? '',
-                            ),
-                            ProfileUser(
-                              title: 'phone Number',
-                              text: state.profileUserMode.phoneNumber ?? '',
-                            ),
-                          ],
+                    Column(
+                      children: [
+                        verticalSpace(180),
+                        ProfileUser(
+                          title: 'Frist Name',
+                          text: state.profileUserMode.firstName ?? 'Name',
                         ),
-                      ),
+                        ProfileUser(
+                          title: 'Last Name',
+                          text: state.profileUserMode.lastName ?? 'Name',
+                        ),
+                        ProfileUser(
+                          title: 'Bio',
+                          text: state.profileUserMode.bio ?? '',
+                        ),
+                        ProfileUser(
+                          title: 'phone Number',
+                          text: state.profileUserMode.phoneNumber ?? '',
+                        ),
+                      ],
                     ),
                   ],
                 ),
-              ),
-            ],
+              ],
+            ),
           );
         } else {
           return Center(

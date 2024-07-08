@@ -190,6 +190,60 @@ class _ApiService implements ApiService {
     return value;
   }
 
+  @override
+  Future<ProfileUserModel> updateProfileUser(
+    String username,
+    String firstName,
+    String lastName,
+    String phoneNumber,
+    String bio,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = FormData();
+    _data.fields.add(MapEntry(
+      'Username',
+      username,
+    ));
+    _data.fields.add(MapEntry(
+      'FirstName',
+      firstName,
+    ));
+    _data.fields.add(MapEntry(
+      'LastName',
+      lastName,
+    ));
+    _data.fields.add(MapEntry(
+      'PhoneNumber',
+      phoneNumber,
+    ));
+    _data.fields.add(MapEntry(
+      'Bio',
+      bio,
+    ));
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<ProfileUserModel>(Options(
+      method: 'PUT',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'multipart/form-data',
+    )
+            .compose(
+              _dio.options,
+              '/User/Profile',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = ProfileUserModel.fromJson(_result.data!);
+    return value;
+  }
+
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||

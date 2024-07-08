@@ -10,6 +10,7 @@ import 'package:e_commerce_app/features/refresh_token/refresh_token_request.dart
 import 'package:e_commerce_app/features/refresh_token/refresh_token_response.dart';
 import 'package:e_commerce_app/features/sign_up/data/models/sign_up_request_body.dart';
 import 'package:e_commerce_app/features/sign_up/data/models/sign_up_response.dart';
+
 import 'package:retrofit/http.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:e_commerce_app/core/network/api_constants.dart';
@@ -41,6 +42,18 @@ abstract class ApiService {
   );
   @GET(ApiContants.profile)
    Future<ProfileUserModel>  getProfileUser(
+   
+  );
+    
+  @PUT(ApiContants.profile)
+   @MultiPart()
+   Future<ProfileUserModel>  updateProfileUser(
+     @Part(name: "Username") String username,
+    @Part(name: "FirstName") String firstName,
+    @Part(name: "LastName") String lastName,
+    @Part(name: "PhoneNumber") String phoneNumber,
+    @Part(name: "Bio") String bio,
+   
    
   );
 }
