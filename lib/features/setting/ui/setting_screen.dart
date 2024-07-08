@@ -23,9 +23,13 @@ class SettingScreen extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  const ContainerIconText(
+                  ContainerIconText(
                     icon: EvaIcons.edit2,
                     title: 'Edit Profile',
+                    onPressed: (){
+                       context.pushReplacementNamed(RoutesString.editProfileScreen);
+                 
+                    },
                   ),
                   ContainerIconText(
                     icon: EvaIcons.heart,

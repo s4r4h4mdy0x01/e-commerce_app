@@ -4,7 +4,8 @@ class StringManager {
   static String titleBestApp = "Best ECommerce ";
     static String login = "Login";
   static String signUp = "Sign Up";
-    static String profile = "Profile";
+   static String profile = "Profile";
+  static String editProfile = "Edit Profile";
       static String setting = "Setting";
   
    static String changePassword = "Change Password";

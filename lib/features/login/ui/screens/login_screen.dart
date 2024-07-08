@@ -58,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: GestureDetector(
                         child: Text(
                           'Forgot Password?',
-                          style: TextStyles.font116orangRegular,
+                          style: TextStyles.font16orangRegular,
                         ),
                       ),
                     ),

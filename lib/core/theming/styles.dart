@@ -28,11 +28,15 @@ class TextStyles {
     fontSize: 18.sp,
     fontWeight: FontWeightManager.regular,
     color: ColorManager.darkPrimary,
-  );
-
-  static TextStyle font13OrangSemiBold = TextStyle(
+  ); static TextStyle font13OrangSemiBold = TextStyle(
     fontSize: 13.sp,
     fontWeight: FontWeightManager.semiBold,
+    color: ColorManager.primary,
+  );
+
+  static TextStyle font13OrangRegular = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightManager.regular,
     color: ColorManager.primary,
   );
   static TextStyle font32orangBold = TextStyle(
@@ -40,7 +44,7 @@ class TextStyles {
     fontWeight: FontWeightManager.bold,
     color: ColorManager.primary,
   );
-  static TextStyle font116orangRegular = TextStyle(
+  static TextStyle font16orangRegular = TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeightManager.regular,
     color: ColorManager.primary,

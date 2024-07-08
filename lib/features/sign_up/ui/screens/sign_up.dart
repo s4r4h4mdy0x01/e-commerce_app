@@ -55,7 +55,7 @@ class SignUpScreen extends StatelessWidget {
                         },
                         child: Text(
                           'Forgot Password?',
-                          style: TextStyles.font116orangRegular,
+                          style: TextStyles.font16orangRegular,
                         ),
                       ),
                     ),

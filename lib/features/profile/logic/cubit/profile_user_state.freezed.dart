@@ -22,6 +22,7 @@ mixin _$ProfileUserState {
     required TResult Function() loading,
     required TResult Function(ProfileUserModel profileUserMode) success,
     required TResult Function(String error) error,
+    required TResult Function() loadingUpdate,
     required TResult Function(ProfileUserModel profileUserMode) successUpdate,
     required TResult Function(String error) errorUpdste,
   }) =>
@@ -32,6 +33,7 @@ mixin _$ProfileUserState {
     TResult? Function()? loading,
     TResult? Function(ProfileUserModel profileUserMode)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? loadingUpdate,
     TResult? Function(ProfileUserModel profileUserMode)? successUpdate,
     TResult? Function(String error)? errorUpdste,
   }) =>
@@ -42,6 +44,7 @@ mixin _$ProfileUserState {
     TResult Function()? loading,
     TResult Function(ProfileUserModel profileUserMode)? success,
     TResult Function(String error)? error,
+    TResult Function()? loadingUpdate,
     TResult Function(ProfileUserModel profileUserMode)? successUpdate,
     TResult Function(String error)? errorUpdste,
     required TResult orElse(),
@@ -53,6 +56,7 @@ mixin _$ProfileUserState {
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
     required TResult Function(Error value) error,
+    required TResult Function(LoadingUpdate value) loadingUpdate,
     required TResult Function(SuccessUpdate value) successUpdate,
     required TResult Function(ErrorUpdate value) errorUpdste,
   }) =>
@@ -63,6 +67,7 @@ mixin _$ProfileUserState {
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
     TResult? Function(Error value)? error,
+    TResult? Function(LoadingUpdate value)? loadingUpdate,
     TResult? Function(SuccessUpdate value)? successUpdate,
     TResult? Function(ErrorUpdate value)? errorUpdste,
   }) =>
@@ -73,6 +78,7 @@ mixin _$ProfileUserState {
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
     TResult Function(Error value)? error,
+    TResult Function(LoadingUpdate value)? loadingUpdate,
     TResult Function(SuccessUpdate value)? successUpdate,
     TResult Function(ErrorUpdate value)? errorUpdste,
     required TResult orElse(),
@@ -140,6 +146,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() loading,
     required TResult Function(ProfileUserModel profileUserMode) success,
     required TResult Function(String error) error,
+    required TResult Function() loadingUpdate,
     required TResult Function(ProfileUserModel profileUserMode) successUpdate,
     required TResult Function(String error) errorUpdste,
   }) {
@@ -153,6 +160,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? loading,
     TResult? Function(ProfileUserModel profileUserMode)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? loadingUpdate,
     TResult? Function(ProfileUserModel profileUserMode)? successUpdate,
     TResult? Function(String error)? errorUpdste,
   }) {
@@ -166,6 +174,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? loading,
     TResult Function(ProfileUserModel profileUserMode)? success,
     TResult Function(String error)? error,
+    TResult Function()? loadingUpdate,
     TResult Function(ProfileUserModel profileUserMode)? successUpdate,
     TResult Function(String error)? errorUpdste,
     required TResult orElse(),
@@ -183,6 +192,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
     required TResult Function(Error value) error,
+    required TResult Function(LoadingUpdate value) loadingUpdate,
     required TResult Function(SuccessUpdate value) successUpdate,
     required TResult Function(ErrorUpdate value) errorUpdste,
   }) {
@@ -196,6 +206,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
     TResult? Function(Error value)? error,
+    TResult? Function(LoadingUpdate value)? loadingUpdate,
     TResult? Function(SuccessUpdate value)? successUpdate,
     TResult? Function(ErrorUpdate value)? errorUpdste,
   }) {
@@ -209,6 +220,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
     TResult Function(Error value)? error,
+    TResult Function(LoadingUpdate value)? loadingUpdate,
     TResult Function(SuccessUpdate value)? successUpdate,
     TResult Function(ErrorUpdate value)? errorUpdste,
     required TResult orElse(),
@@ -266,6 +278,7 @@ class _$LoadingImpl implements Loading {
     required TResult Function() loading,
     required TResult Function(ProfileUserModel profileUserMode) success,
     required TResult Function(String error) error,
+    required TResult Function() loadingUpdate,
     required TResult Function(ProfileUserModel profileUserMode) successUpdate,
     required TResult Function(String error) errorUpdste,
   }) {
@@ -279,6 +292,7 @@ class _$LoadingImpl implements Loading {
     TResult? Function()? loading,
     TResult? Function(ProfileUserModel profileUserMode)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? loadingUpdate,
     TResult? Function(ProfileUserModel profileUserMode)? successUpdate,
     TResult? Function(String error)? errorUpdste,
   }) {
@@ -292,6 +306,7 @@ class _$LoadingImpl implements Loading {
     TResult Function()? loading,
     TResult Function(ProfileUserModel profileUserMode)? success,
     TResult Function(String error)? error,
+    TResult Function()? loadingUpdate,
     TResult Function(ProfileUserModel profileUserMode)? successUpdate,
     TResult Function(String error)? errorUpdste,
     required TResult orElse(),
@@ -309,6 +324,7 @@ class _$LoadingImpl implements Loading {
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
     required TResult Function(Error value) error,
+    required TResult Function(LoadingUpdate value) loadingUpdate,
     required TResult Function(SuccessUpdate value) successUpdate,
     required TResult Function(ErrorUpdate value) errorUpdste,
   }) {
@@ -322,6 +338,7 @@ class _$LoadingImpl implements Loading {
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
     TResult? Function(Error value)? error,
+    TResult? Function(LoadingUpdate value)? loadingUpdate,
     TResult? Function(SuccessUpdate value)? successUpdate,
     TResult? Function(ErrorUpdate value)? errorUpdste,
   }) {
@@ -335,6 +352,7 @@ class _$LoadingImpl implements Loading {
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
     TResult Function(Error value)? error,
+    TResult Function(LoadingUpdate value)? loadingUpdate,
     TResult Function(SuccessUpdate value)? successUpdate,
     TResult Function(ErrorUpdate value)? errorUpdste,
     required TResult orElse(),
@@ -419,6 +437,7 @@ class _$SuccessImpl implements Success {
     required TResult Function() loading,
     required TResult Function(ProfileUserModel profileUserMode) success,
     required TResult Function(String error) error,
+    required TResult Function() loadingUpdate,
     required TResult Function(ProfileUserModel profileUserMode) successUpdate,
     required TResult Function(String error) errorUpdste,
   }) {
@@ -432,6 +451,7 @@ class _$SuccessImpl implements Success {
     TResult? Function()? loading,
     TResult? Function(ProfileUserModel profileUserMode)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? loadingUpdate,
     TResult? Function(ProfileUserModel profileUserMode)? successUpdate,
     TResult? Function(String error)? errorUpdste,
   }) {
@@ -445,6 +465,7 @@ class _$SuccessImpl implements Success {
     TResult Function()? loading,
     TResult Function(ProfileUserModel profileUserMode)? success,
     TResult Function(String error)? error,
+    TResult Function()? loadingUpdate,
     TResult Function(ProfileUserModel profileUserMode)? successUpdate,
     TResult Function(String error)? errorUpdste,
     required TResult orElse(),
@@ -462,6 +483,7 @@ class _$SuccessImpl implements Success {
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
     required TResult Function(Error value) error,
+    required TResult Function(LoadingUpdate value) loadingUpdate,
     required TResult Function(SuccessUpdate value) successUpdate,
     required TResult Function(ErrorUpdate value) errorUpdste,
   }) {
@@ -475,6 +497,7 @@ class _$SuccessImpl implements Success {
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
     TResult? Function(Error value)? error,
+    TResult? Function(LoadingUpdate value)? loadingUpdate,
     TResult? Function(SuccessUpdate value)? successUpdate,
     TResult? Function(ErrorUpdate value)? errorUpdste,
   }) {
@@ -488,6 +511,7 @@ class _$SuccessImpl implements Success {
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
     TResult Function(Error value)? error,
+    TResult Function(LoadingUpdate value)? loadingUpdate,
     TResult Function(SuccessUpdate value)? successUpdate,
     TResult Function(ErrorUpdate value)? errorUpdste,
     required TResult orElse(),
@@ -577,6 +601,7 @@ class _$ErrorImpl implements Error {
     required TResult Function() loading,
     required TResult Function(ProfileUserModel profileUserMode) success,
     required TResult Function(String error) error,
+    required TResult Function() loadingUpdate,
     required TResult Function(ProfileUserModel profileUserMode) successUpdate,
     required TResult Function(String error) errorUpdste,
   }) {
@@ -590,6 +615,7 @@ class _$ErrorImpl implements Error {
     TResult? Function()? loading,
     TResult? Function(ProfileUserModel profileUserMode)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? loadingUpdate,
     TResult? Function(ProfileUserModel profileUserMode)? successUpdate,
     TResult? Function(String error)? errorUpdste,
   }) {
@@ -603,6 +629,7 @@ class _$ErrorImpl implements Error {
     TResult Function()? loading,
     TResult Function(ProfileUserModel profileUserMode)? success,
     TResult Function(String error)? error,
+    TResult Function()? loadingUpdate,
     TResult Function(ProfileUserModel profileUserMode)? successUpdate,
     TResult Function(String error)? errorUpdste,
     required TResult orElse(),
@@ -620,6 +647,7 @@ class _$ErrorImpl implements Error {
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
     required TResult Function(Error value) error,
+    required TResult Function(LoadingUpdate value) loadingUpdate,
     required TResult Function(SuccessUpdate value) successUpdate,
     required TResult Function(ErrorUpdate value) errorUpdste,
   }) {
@@ -633,6 +661,7 @@ class _$ErrorImpl implements Error {
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
     TResult? Function(Error value)? error,
+    TResult? Function(LoadingUpdate value)? loadingUpdate,
     TResult? Function(SuccessUpdate value)? successUpdate,
     TResult? Function(ErrorUpdate value)? errorUpdste,
   }) {
@@ -646,6 +675,7 @@ class _$ErrorImpl implements Error {
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
     TResult Function(Error value)? error,
+    TResult Function(LoadingUpdate value)? loadingUpdate,
     TResult Function(SuccessUpdate value)? successUpdate,
     TResult Function(ErrorUpdate value)? errorUpdste,
     required TResult orElse(),
@@ -664,6 +694,138 @@ abstract class Error implements ProfileUserState {
   @JsonKey(ignore: true)
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadingUpdateImplCopyWith<$Res> {
+  factory _$$LoadingUpdateImplCopyWith(
+          _$LoadingUpdateImpl value, $Res Function(_$LoadingUpdateImpl) then) =
+      __$$LoadingUpdateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingUpdateImplCopyWithImpl<$Res>
+    extends _$ProfileUserStateCopyWithImpl<$Res, _$LoadingUpdateImpl>
+    implements _$$LoadingUpdateImplCopyWith<$Res> {
+  __$$LoadingUpdateImplCopyWithImpl(
+      _$LoadingUpdateImpl _value, $Res Function(_$LoadingUpdateImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadingUpdateImpl implements LoadingUpdate {
+  const _$LoadingUpdateImpl();
+
+  @override
+  String toString() {
+    return 'ProfileUserState.loadingUpdate()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadingUpdateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(ProfileUserModel profileUserMode) success,
+    required TResult Function(String error) error,
+    required TResult Function() loadingUpdate,
+    required TResult Function(ProfileUserModel profileUserMode) successUpdate,
+    required TResult Function(String error) errorUpdste,
+  }) {
+    return loadingUpdate();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(ProfileUserModel profileUserMode)? success,
+    TResult? Function(String error)? error,
+    TResult? Function()? loadingUpdate,
+    TResult? Function(ProfileUserModel profileUserMode)? successUpdate,
+    TResult? Function(String error)? errorUpdste,
+  }) {
+    return loadingUpdate?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(ProfileUserModel profileUserMode)? success,
+    TResult Function(String error)? error,
+    TResult Function()? loadingUpdate,
+    TResult Function(ProfileUserModel profileUserMode)? successUpdate,
+    TResult Function(String error)? errorUpdste,
+    required TResult orElse(),
+  }) {
+    if (loadingUpdate != null) {
+      return loadingUpdate();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(Success value) success,
+    required TResult Function(Error value) error,
+    required TResult Function(LoadingUpdate value) loadingUpdate,
+    required TResult Function(SuccessUpdate value) successUpdate,
+    required TResult Function(ErrorUpdate value) errorUpdste,
+  }) {
+    return loadingUpdate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Success value)? success,
+    TResult? Function(Error value)? error,
+    TResult? Function(LoadingUpdate value)? loadingUpdate,
+    TResult? Function(SuccessUpdate value)? successUpdate,
+    TResult? Function(ErrorUpdate value)? errorUpdste,
+  }) {
+    return loadingUpdate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Success value)? success,
+    TResult Function(Error value)? error,
+    TResult Function(LoadingUpdate value)? loadingUpdate,
+    TResult Function(SuccessUpdate value)? successUpdate,
+    TResult Function(ErrorUpdate value)? errorUpdste,
+    required TResult orElse(),
+  }) {
+    if (loadingUpdate != null) {
+      return loadingUpdate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadingUpdate implements ProfileUserState {
+  const factory LoadingUpdate() = _$LoadingUpdateImpl;
 }
 
 /// @nodoc
@@ -735,6 +897,7 @@ class _$SuccessUpdateImpl implements SuccessUpdate {
     required TResult Function() loading,
     required TResult Function(ProfileUserModel profileUserMode) success,
     required TResult Function(String error) error,
+    required TResult Function() loadingUpdate,
     required TResult Function(ProfileUserModel profileUserMode) successUpdate,
     required TResult Function(String error) errorUpdste,
   }) {
@@ -748,6 +911,7 @@ class _$SuccessUpdateImpl implements SuccessUpdate {
     TResult? Function()? loading,
     TResult? Function(ProfileUserModel profileUserMode)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? loadingUpdate,
     TResult? Function(ProfileUserModel profileUserMode)? successUpdate,
     TResult? Function(String error)? errorUpdste,
   }) {
@@ -761,6 +925,7 @@ class _$SuccessUpdateImpl implements SuccessUpdate {
     TResult Function()? loading,
     TResult Function(ProfileUserModel profileUserMode)? success,
     TResult Function(String error)? error,
+    TResult Function()? loadingUpdate,
     TResult Function(ProfileUserModel profileUserMode)? successUpdate,
     TResult Function(String error)? errorUpdste,
     required TResult orElse(),
@@ -778,6 +943,7 @@ class _$SuccessUpdateImpl implements SuccessUpdate {
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
     required TResult Function(Error value) error,
+    required TResult Function(LoadingUpdate value) loadingUpdate,
     required TResult Function(SuccessUpdate value) successUpdate,
     required TResult Function(ErrorUpdate value) errorUpdste,
   }) {
@@ -791,6 +957,7 @@ class _$SuccessUpdateImpl implements SuccessUpdate {
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
     TResult? Function(Error value)? error,
+    TResult? Function(LoadingUpdate value)? loadingUpdate,
     TResult? Function(SuccessUpdate value)? successUpdate,
     TResult? Function(ErrorUpdate value)? errorUpdste,
   }) {
@@ -804,6 +971,7 @@ class _$SuccessUpdateImpl implements SuccessUpdate {
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
     TResult Function(Error value)? error,
+    TResult Function(LoadingUpdate value)? loadingUpdate,
     TResult Function(SuccessUpdate value)? successUpdate,
     TResult Function(ErrorUpdate value)? errorUpdste,
     required TResult orElse(),
@@ -893,6 +1061,7 @@ class _$ErrorUpdateImpl implements ErrorUpdate {
     required TResult Function() loading,
     required TResult Function(ProfileUserModel profileUserMode) success,
     required TResult Function(String error) error,
+    required TResult Function() loadingUpdate,
     required TResult Function(ProfileUserModel profileUserMode) successUpdate,
     required TResult Function(String error) errorUpdste,
   }) {
@@ -906,6 +1075,7 @@ class _$ErrorUpdateImpl implements ErrorUpdate {
     TResult? Function()? loading,
     TResult? Function(ProfileUserModel profileUserMode)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? loadingUpdate,
     TResult? Function(ProfileUserModel profileUserMode)? successUpdate,
     TResult? Function(String error)? errorUpdste,
   }) {
@@ -919,6 +1089,7 @@ class _$ErrorUpdateImpl implements ErrorUpdate {
     TResult Function()? loading,
     TResult Function(ProfileUserModel profileUserMode)? success,
     TResult Function(String error)? error,
+    TResult Function()? loadingUpdate,
     TResult Function(ProfileUserModel profileUserMode)? successUpdate,
     TResult Function(String error)? errorUpdste,
     required TResult orElse(),
@@ -936,6 +1107,7 @@ class _$ErrorUpdateImpl implements ErrorUpdate {
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
     required TResult Function(Error value) error,
+    required TResult Function(LoadingUpdate value) loadingUpdate,
     required TResult Function(SuccessUpdate value) successUpdate,
     required TResult Function(ErrorUpdate value) errorUpdste,
   }) {
@@ -949,6 +1121,7 @@ class _$ErrorUpdateImpl implements ErrorUpdate {
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
     TResult? Function(Error value)? error,
+    TResult? Function(LoadingUpdate value)? loadingUpdate,
     TResult? Function(SuccessUpdate value)? successUpdate,
     TResult? Function(ErrorUpdate value)? errorUpdste,
   }) {
@@ -962,6 +1135,7 @@ class _$ErrorUpdateImpl implements ErrorUpdate {
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
     TResult Function(Error value)? error,
+    TResult Function(LoadingUpdate value)? loadingUpdate,
     TResult Function(SuccessUpdate value)? successUpdate,
     TResult Function(ErrorUpdate value)? errorUpdste,
     required TResult orElse(),

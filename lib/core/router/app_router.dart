@@ -8,6 +8,7 @@ import 'package:e_commerce_app/features/login/ui/screens/login_screen.dart';
 import 'package:e_commerce_app/features/onboarding/onboarding_screen.dart';
 import 'package:e_commerce_app/features/profile/data/models/user_model.dart';
 import 'package:e_commerce_app/features/profile/logic/cubit/profile_user_cubit.dart';
+import 'package:e_commerce_app/features/profile/ui/screen/edit_Profile_screen.dart';
 import 'package:e_commerce_app/features/profile/ui/screen/profile_screen.dart';
 import 'package:e_commerce_app/features/setting/ui/setting_screen.dart';
 import 'package:e_commerce_app/features/sign_up/logic/cubit/sign_up_cubit.dart';
@@ -27,6 +28,13 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const SettingScreen(),
         );
+ case RoutesString.editProfileScreen:
+        return MaterialPageRoute(
+          builder: (context) =>  BlocProvider(
+            create: (context) => getIt<ProfileUserCubit>(),
+            child: const EditProfileScreen(),
+          ),
+        );
 
       case RoutesString.homeScreen:
         return MaterialPageRoute(
@@ -36,7 +44,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
             create: (context) => getIt<ProfileUserCubit>()..fetchProfile(),
-            child: ProfileScreen(),
+            child: const ProfileScreen(),
           ),
         );
       case RoutesString.changePasswordScreen:
