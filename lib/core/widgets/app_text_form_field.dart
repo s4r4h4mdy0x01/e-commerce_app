@@ -16,7 +16,7 @@ class AppTextFormField extends StatelessWidget {
       required this.hintText,
       this.focusedBorder,
       this.enabledBorder,
-      required this.validator});
+      this.validator});
   final EdgeInsetsGeometry? contentPadding;
   final Color? fillColorBackground;
   final Widget? suffixIcon;
@@ -27,13 +27,13 @@ class AppTextFormField extends StatelessWidget {
   final bool? obscureText;
   final TextInputType? keyboardType;
   final TextEditingController? controller;
-  final Function(String?) validator;
+  final Function(String?)? validator;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
       validator: (value) {
-        return validator(value);
+        return validator!(value);
       },
       obscureText: obscureText ?? false,
       keyboardType: keyboardType ?? TextInputType.none,
