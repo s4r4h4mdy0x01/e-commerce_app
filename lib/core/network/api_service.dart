@@ -41,19 +41,17 @@ abstract class ApiService {
     @Body() ChangePasswordRequestBody changePasswordRequestBody,
   );
   @GET(ApiContants.profile)
-   Future<ProfileUserModel>  getProfileUser(
-   
-  );
-    
+  Future<ProfileUserModel> getProfileUser();
+
   @PUT(ApiContants.profile)
-   @MultiPart()
-   Future<ProfileUserModel>  updateProfileUser(
-     @Part(name: "Username") String username,
+  @MultiPart()
+  Future<ProfileUserModel> updateProfileUser(
+    @Part(name: "Username") String username,
     @Part(name: "FirstName") String firstName,
     @Part(name: "LastName") String lastName,
     @Part(name: "PhoneNumber") String phoneNumber,
     @Part(name: "Bio") String bio,
-   
-   
+    //
+    //  @Part(name: "Image") XFile image,
   );
 }

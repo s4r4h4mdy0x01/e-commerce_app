@@ -14,7 +14,7 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     double screenHeight = MediaQuery.of(context).size.height;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(body: BlocBuilder<ProfileUserCubit, ProfileUserState>(
       builder: (context, state) {
         if (state is Success) {
@@ -30,8 +30,8 @@ class ProfileScreen extends StatelessWidget {
                   alignment: Alignment.topCenter,
                   children: [
                     Container(
-                      height: screenHeight * 0.85,
-                       width: double.infinity,
+                      height: screenHeight,
+                      width: double.infinity,
                       decoration: BoxDecoration(
                         color: ColorManager.lighttGrey,
                         borderRadius: const BorderRadius.only(

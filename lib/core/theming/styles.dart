@@ -28,7 +28,19 @@ class TextStyles {
     fontSize: 18.sp,
     fontWeight: FontWeightManager.regular,
     color: ColorManager.darkPrimary,
-  ); static TextStyle font13OrangSemiBold = TextStyle(
+  );
+    static TextStyle font18DarkOrangeSemiBold = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeightManager.semiBold,
+    color: ColorManager.darkPrimary,
+  );
+   static TextStyle font18BlackSemiBold = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeightManager.semiBold,
+    color: ColorManager.black,
+  );
+
+  static TextStyle font13OrangSemiBold = TextStyle(
     fontSize: 13.sp,
     fontWeight: FontWeightManager.semiBold,
     color: ColorManager.primary,
@@ -90,9 +102,16 @@ class TextStyles {
     fontWeight: FontWeightManager.medium,
     color: ColorManager.darkPrimary,
   );
+  
   static TextStyle font15DarkOrangeMedium = TextStyle(
     fontSize: 15.sp,
     fontWeight: FontWeightManager.medium,
     color: ColorManager.darkPrimary,
+  );
+
+  static TextStyle font18WhiteMedium = TextStyle(
+    fontSize: 24.sp,
+    fontWeight: FontWeightManager.semiBold,
+    color: ColorManager.white,
   );
 }

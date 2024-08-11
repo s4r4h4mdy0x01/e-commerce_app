@@ -6,9 +6,7 @@ import 'package:e_commerce_app/features/change_password/data/repo/change_passwor
 import 'package:e_commerce_app/features/change_password/logic/cubit/change_password_cubit.dart';
 import 'package:e_commerce_app/features/login/data/repo/login_repo.dart';
 import 'package:e_commerce_app/features/login/logic/cubit/login_cubit.dart';
-import 'package:e_commerce_app/features/profile/data/models/user_model.dart';
 import 'package:e_commerce_app/features/profile/logic/cubit/profile_user_cubit.dart';
-import 'package:e_commerce_app/features/profile/ui/screen/profile_screen.dart';
 import 'package:e_commerce_app/features/sign_up/data/repo/sign_up_repo.dart';
 import 'package:e_commerce_app/features/sign_up/logic/cubit/sign_up_cubit.dart';
 import 'package:get_it/get_it.dart';

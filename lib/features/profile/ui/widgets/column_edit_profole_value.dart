@@ -26,6 +26,7 @@ class ColumnEditProfoleValue extends StatelessWidget {
 
           EditProfileValue(
             appTextFormField: AppTextFormField(
+              keyboardType: TextInputType.name,
               hintText: ' Frist name',
               controller: context.read<ProfileUserCubit>().fristNameController,
             ),
@@ -33,6 +34,7 @@ class ColumnEditProfoleValue extends StatelessWidget {
           ),
           EditProfileValue(
             appTextFormField: AppTextFormField(
+              keyboardType: TextInputType.name,
               hintText: 'Last Name',
               controller: context.read<ProfileUserCubit>().lastNameController,
             ),
@@ -40,6 +42,7 @@ class ColumnEditProfoleValue extends StatelessWidget {
           ),
           EditProfileValue(
             appTextFormField: AppTextFormField(
+              keyboardType: TextInputType.text,
               hintText: ' User Name',
               controller: context.read<ProfileUserCubit>().userNameController,
             ),
@@ -47,6 +50,7 @@ class ColumnEditProfoleValue extends StatelessWidget {
           ),
           EditProfileValue(
             appTextFormField: AppTextFormField(
+              keyboardType: TextInputType.text,
               hintText: 'boi',
               controller: context.read<ProfileUserCubit>().bioController,
             ),
@@ -55,6 +59,7 @@ class ColumnEditProfoleValue extends StatelessWidget {
 
           EditProfileValue(
             appTextFormField: AppTextFormField(
+              keyboardType: TextInputType.phone,
               hintText: 'phone',
               controller:
                   context.read<ProfileUserCubit>().phoneNumberController,

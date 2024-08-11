@@ -2,7 +2,6 @@ import 'package:e_commerce_app/core/network/api_result.dart';
 import 'package:e_commerce_app/core/network/api_service.dart';
 import 'package:e_commerce_app/features/profile/data/models/user_model.dart';
 
-
 import '../../../../core/network/api_error_handler.dart';
 
 class ProfileUserRepo {
@@ -24,7 +23,7 @@ class ProfileUserRepo {
     String lastName,
     String phoneNumber,
     String bio,
- 
+    //  XFile image
   ) async {
     try {
       final response = await _apiService.updateProfileUser(

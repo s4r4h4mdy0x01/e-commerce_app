@@ -1,7 +1,5 @@
 import 'package:e_commerce_app/core/helpers/extensions.dart';
-import 'package:e_commerce_app/core/helpers/shared_pref_helper.dart';
 import 'package:e_commerce_app/core/helpers/spacing.dart';
-import 'package:e_commerce_app/core/router/routes.dart';
 import 'package:e_commerce_app/core/string.dart';
 import 'package:e_commerce_app/core/theming/styles.dart';
 import 'package:e_commerce_app/core/widgets/app_text_button.dart';
@@ -47,12 +45,7 @@ class SignUpScreen extends StatelessWidget {
                     Align(
                       alignment: Alignment.topRight,
                       child: GestureDetector(
-                        onTap: () async {
-                          String? accessToken =
-                              await SharedPrefHelper.getSecuredString(
-                                  SharedPrefKeys.accessToken);
-                          print(accessToken);
-                        },
+                        onTap: () async {},
                         child: Text(
                           'Forgot Password?',
                           style: TextStyles.font16orangRegular,
@@ -62,7 +55,7 @@ class SignUpScreen extends StatelessWidget {
                     verticalSpace(70),
                     GestureDetector(
                       onTap: () {
-                        context.pushNamed(RoutesString.loginScreen);
+                        context.pop();
                       },
                       child: const AlreadyHaveAccount(),
                     ),

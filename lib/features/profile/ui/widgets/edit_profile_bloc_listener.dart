@@ -6,8 +6,6 @@ import 'package:e_commerce_app/features/profile/logic/cubit/profile_user_state.d
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
-
 class EditProfileBlocListener extends StatelessWidget {
   const EditProfileBlocListener({super.key});
 
@@ -15,7 +13,9 @@ class EditProfileBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<ProfileUserCubit, ProfileUserState>(
       listenWhen: (previous, current) =>
-          current is LoadingUpdate || current is SuccessUpdate || current is ErrorUpdate,
+          current is LoadingUpdate ||
+          current is SuccessUpdate ||
+          current is ErrorUpdate,
       listener: (context, state) {
         state.whenOrNull(
           loading: () {
@@ -28,7 +28,7 @@ class EditProfileBlocListener extends StatelessWidget {
               ),
             );
           },
-          success: (chagePassworResponse) {
+          success: (profileResponse) {
             context.pop();
             showSuccessDialog(context);
           },
@@ -46,12 +46,11 @@ class EditProfileBlocListener extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Change Password Successful'),
+          title: const Text('Update Profile Successful'),
           content: const SingleChildScrollView(
             child: ListBody(
               children: <Widget>[
-                Text(
-                    'Congratulations, you have change password  successfully!'),
+                Text('Congratulations, you have Update Profile successfully!'),
               ],
             ),
           ),
